@@ -10,8 +10,8 @@ GO
 USE db_SalesClothes
 GO
 
-/* Configurar idioma español en el servidor */
-SET LANGUAGE Español
+/* Configurar idioma espaÃ±ol en el servidor */
+SET LANGUAGE EspaÃ±ol
 GO
 SELECT @@language AS 'Idioma'
 GO
@@ -50,18 +50,18 @@ ALTER TABLE client
 	ADD id int identity(1,1)
 GO
 
-/* Agregar restricción primary key */
+/* Agregar restricciÃ³n primary key */
 ALTER TABLE client
 	ADD CONSTRAINT client_pk 
 	PRIMARY KEY (id)
 GO
 
-/* El tipo de documento puede ser DNI ó CNE */
+/* El tipo de documento puede ser DNI Ã³ CNE */
 ALTER TABLE client
 	DROP COLUMN type_document
 GO
 
-/* Agregar restricción para tipo documento */
+/* Agregar restricciÃ³n para tipo documento */
 ALTER TABLE client
 	ADD type_document char(3)
 	CONSTRAINT type_document_client
@@ -73,7 +73,7 @@ ALTER TABLE client
 	DROP COLUMN number_document
 GO
 
-/* El número de documento sólo debe permitir dígitos de 0 - 9 */
+/* El nÃºmero de documento sÃ³lo debe permitir dÃ­gitos de 0 - 9 */
 ALTER TABLE client
 	ADD number_document char(9)
 	CONSTRAINT number_document_client
@@ -97,7 +97,7 @@ ALTER TABLE client
 	DROP COLUMN cell_phone
 GO
 
-/* Validar que el celular esté conformado por 9 números */
+/* Validar que el celular estÃ© conformado por 9 nÃºmeros */
 ALTER TABLE client
 	ADD cell_phone char(9)
 	CONSTRAINT cellphone_client
@@ -109,7 +109,7 @@ ALTER TABLE client
 	DROP COLUMN birthdate
 GO
 
-/* Sólo debe permitir el registro de clientes mayores de edad */
+/* SÃ³lo debe permitir el registro de clientes mayores de edad */
 ALTER TABLE client
 	ADD  birthdate date
 	CONSTRAINT birthdate_client
@@ -121,7 +121,7 @@ ALTER TABLE client
 	DROP COLUMN active
 GO
 
-/* El valor predeterminado será activo al registrar clientes */
+/* El valor predeterminado serÃ¡ activo al registrar clientes */
 ALTER TABLE client
 	ADD active bit DEFAULT (1)
 GO
@@ -155,18 +155,18 @@ ALTER TABLE seller
 	ADD id int identity(1,1)
 GO
 
-/* Agregar restricción primary key */
+/* Agregar restricciÃ³n primary key */
 ALTER TABLE seller
 	ADD CONSTRAINT seller_pk 
 	PRIMARY KEY (id)
 GO
 
-/* El tipo de documento puede ser DNI ó CNE */
+/* El tipo de documento puede ser DNI Ã³ CNE */
 ALTER TABLE seller
 	DROP COLUMN type_document
 GO
 
-/* Agregar restricción para tipo documento */
+/* Agregar restricciÃ³n para tipo documento */
 ALTER TABLE seller
 	ADD type_document char(3)
 	CONSTRAINT type_document_seller
@@ -178,7 +178,7 @@ ALTER TABLE seller
 	DROP COLUMN number_document
 GO
 
-/* El número de documento sólo debe permitir dígitos de 0 - 9 */
+/* El nÃºmero de documento sÃ³lo debe permitir dÃ­gitos de 0 - 9 */
 ALTER TABLE seller
 	ADD number_document char(9)
 	CONSTRAINT number_document_seller
@@ -205,7 +205,7 @@ ALTER TABLE seller
 	DROP COLUMN cell_phone
 GO
 
-/* Validar que el celular esté conformado por 9 números */
+/* Validar que el celular estÃ© conformado por 9 nÃºmeros */
 ALTER TABLE seller
 	ADD cell_phone char(9)
 	CONSTRAINT cellphone_seller
@@ -229,7 +229,7 @@ ALTER TABLE seller
 	DROP COLUMN activo
 GO
 
-/* El valor predeterminado será activo al registrar sellers */
+/* El valor predeterminado serÃ¡ activo al registrar sellers */
 ALTER TABLE seller
 	ADD active bit DEFAULT (1)
 GO
@@ -261,7 +261,7 @@ ALTER TABLE clothes
 	ADD id int identity(1,1)
 GO
 
-/* Agregar restricción primary key */
+/* Agregar restricciÃ³n primary key */
 ALTER TABLE clothes
 	ADD CONSTRAINT clothes_pk 
 	PRIMARY KEY (id)
@@ -272,7 +272,7 @@ ALTER TABLE clothes
 	DROP COLUMN active
 GO
 
-/* El valor predeterminado será activo al registrar clothes */
+/* El valor predeterminado serÃ¡ activo al registrar clothes */
 ALTER TABLE clothes
 	ADD active bit DEFAULT (1)
 GO
@@ -302,7 +302,7 @@ ALTER TABLE sale
 	ADD id int identity(1,1)
 GO
 
-/* Agregar restricción primary key */
+/* Agregar restricciÃ³n primary key */
 ALTER TABLE sale
 	ADD CONSTRAINT sale_pk 
 	PRIMARY KEY (id)
@@ -328,7 +328,7 @@ ALTER TABLE sale
 	DROP COLUMN active
 GO
 
-/* El valor predeterminado será activo al registrar sales */
+/* El valor predeterminado serÃ¡ activo al registrar sales */
 ALTER TABLE sale
 	ADD active bit DEFAULT (1)
 GO
