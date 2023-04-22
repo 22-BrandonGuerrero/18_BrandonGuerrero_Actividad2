@@ -1,3 +1,5 @@
+/* Actividad 1 */
+
 /* Si la base de datos ya existe la eliminamos */
 DROP DATABASE IF EXISTS db_SalesClothes
 GO
