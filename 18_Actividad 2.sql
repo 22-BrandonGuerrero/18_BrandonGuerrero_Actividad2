@@ -10,8 +10,8 @@ GO
 USE db_SalesClothes
 GO
 
-/* Configurar idioma espaÒol en el servidor */
-SET LANGUAGE EspaÒol
+/* Configurar idioma espa√±ol en el servidor */
+SET LANGUAGE Espa√±ol
 GO
 SELECT @@language AS 'Idioma'
 GO
@@ -50,18 +50,18 @@ ALTER TABLE client
 	ADD id int identity(1,1)
 GO
 
-/* Agregar restricciÛn primary key */
+/* Agregar restricci√≥n primary key */
 ALTER TABLE client
 	ADD CONSTRAINT client_pk 
 	PRIMARY KEY (id)
 GO
 
-/* El tipo de documento puede ser DNI Û CNE */
+/* El tipo de documento puede ser DNI √≥ CNE */
 ALTER TABLE client
 	DROP COLUMN type_document
 GO
 
-/* Agregar restricciÛn para tipo documento */
+/* Agregar restricci√≥n para tipo documento */
 ALTER TABLE client
 	ADD type_document char(3)
 	CONSTRAINT type_document_client
@@ -73,7 +73,7 @@ ALTER TABLE client
 	DROP COLUMN number_document
 GO
 
-/* El n˙mero de documento sÛlo debe permitir dÌgitos de 0 - 9 */
+/* El n√∫mero de documento s√≥lo debe permitir d√≠gitos de 0 - 9 */
 ALTER TABLE client
 	ADD number_document char(9)
 	CONSTRAINT number_document_client
@@ -97,7 +97,7 @@ ALTER TABLE client
 	DROP COLUMN cell_phone
 GO
 
-/* Validar que el celular estÈ conformado por 9 n˙meros */
+/* Validar que el celular est√© conformado por 9 n√∫meros */
 ALTER TABLE client
 	ADD cell_phone char(9)
 	CONSTRAINT cellphone_client
@@ -109,7 +109,7 @@ ALTER TABLE client
 	DROP COLUMN birthdate
 GO
 
-/* SÛlo debe permitir el registro de clientes mayores de edad */
+/* S√≥lo debe permitir el registro de clientes mayores de edad */
 ALTER TABLE client
 	ADD  birthdate date
 	CONSTRAINT birthdate_client
@@ -121,7 +121,7 @@ ALTER TABLE client
 	DROP COLUMN active
 GO
 
-/* El valor predeterminado ser· activo al registrar clientes */
+/* El valor predeterminado ser√° activo al registrar clientes */
 ALTER TABLE client
 	ADD active bit DEFAULT (1)
 GO
@@ -155,18 +155,18 @@ ALTER TABLE seller
 	ADD id int identity(1,1)
 GO
 
-/* Agregar restricciÛn primary key */
+/* Agregar restricci√≥n primary key */
 ALTER TABLE seller
 	ADD CONSTRAINT seller_pk 
 	PRIMARY KEY (id)
 GO
 
-/* El tipo de documento puede ser DNI Û CNE */
+/* El tipo de documento puede ser DNI √≥ CNE */
 ALTER TABLE seller
 	DROP COLUMN type_document
 GO
 
-/* Agregar restricciÛn para tipo documento */
+/* Agregar restricci√≥n para tipo documento */
 ALTER TABLE seller
 	ADD type_document char(3)
 	CONSTRAINT type_document_seller
@@ -178,7 +178,7 @@ ALTER TABLE seller
 	DROP COLUMN number_document
 GO
 
-/* El n˙mero de documento sÛlo debe permitir dÌgitos de 0 - 9 */
+/* El n√∫mero de documento s√≥lo debe permitir d√≠gitos de 0 - 9 */
 ALTER TABLE seller
 	ADD number_document char(9)
 	CONSTRAINT number_document_seller
@@ -205,7 +205,7 @@ ALTER TABLE seller
 	DROP COLUMN cell_phone
 GO
 
-/* Validar que el celular estÈ conformado por 9 n˙meros */
+/* Validar que el celular est√© conformado por 9 n√∫meros */
 ALTER TABLE seller
 	ADD cell_phone char(9)
 	CONSTRAINT cellphone_seller
@@ -229,7 +229,7 @@ ALTER TABLE seller
 	DROP COLUMN activo
 GO
 
-/* El valor predeterminado ser· activo al registrar sellers */
+/* El valor predeterminado ser√° activo al registrar sellers */
 ALTER TABLE seller
 	ADD active bit DEFAULT (1)
 GO
@@ -261,7 +261,7 @@ ALTER TABLE clothes
 	ADD id int identity(1,1)
 GO
 
-/* Agregar restricciÛn primary key */
+/* Agregar restricci√≥n primary key */
 ALTER TABLE clothes
 	ADD CONSTRAINT clothes_pk 
 	PRIMARY KEY (id)
@@ -272,7 +272,7 @@ ALTER TABLE clothes
 	DROP COLUMN active
 GO
 
-/* El valor predeterminado ser· activo al registrar clothes */
+/* El valor predeterminado ser√° activo al registrar clothes */
 ALTER TABLE clothes
 	ADD active bit DEFAULT (1)
 GO
@@ -302,7 +302,7 @@ ALTER TABLE sale
 	ADD id int identity(1,1)
 GO
 
-/* Agregar restricciÛn primary key */
+/* Agregar restricci√≥n primary key */
 ALTER TABLE sale
 	ADD CONSTRAINT sale_pk 
 	PRIMARY KEY (id)
@@ -328,7 +328,7 @@ ALTER TABLE sale
 	DROP COLUMN active
 GO
 
-/* El valor predeterminado ser· activo al registrar sales */
+/* El valor predeterminado ser√° activo al registrar sales */
 ALTER TABLE sale
 	ADD active bit DEFAULT (1)
 GO
@@ -379,13 +379,13 @@ INSERT INTO client
 	(type_document, number_document, names, last_name, email, cell_phone, birthdate)
 VALUES
 	('DNI', '78451233', 'Fabiola', 'Perales Campos', 'fabiolaperales@gmail.com', '991692597', '19/01/2005'),
-	('DNI', '14782536', 'Marcos', 'D·vila Palomino', 'marcosdavila@gmail.com', '982514752', '03/03/1990'),
+	('DNI', '14782536', 'Marcos', 'D√°vila Palomino', 'marcosdavila@gmail.com', '982514752', '03/03/1990'),
 	('DNI', '78451236', 'Luis Alberto', 'Barrios Paredes', 'luisbarrios@outlook.com', '985414752', '03/10/1995'),
-	('CNE', '352514789', 'Claudia MarÌa', 'MartÌnez RodrÌguez', 'claudiamartinez@yahoo.com', '995522147', '23/09/1992'),
-	('CNE', '142536792', 'Mario Tadeo', 'Farf·n Castillo', 'mariotadeo@outlook.com', '973125478', '25/11/1997'),
+	('CNE', '352514789', 'Claudia Mar√≠a', 'Mart√≠nez Rodr√≠guez', 'claudiamartinez@yahoo.com', '995522147', '23/09/1992'),
+	('CNE', '142536792', 'Mario Tadeo', 'Farf√°n Castillo', 'mariotadeo@outlook.com', '973125478', '25/11/1997'),
 	('DNI', '58251433', 'Ana Lucrecia', 'Chumpitaz Prada', 'anachumpitaz@gmail.com', '982514361', '17/10/1992'),
 	('DNI', '15223369', 'Humberto', 'Cabrera Tadeo', 'humbertocabrera@yahoo.com', '977112234', '27/05/1990'),
-	('CNE', '442233698', 'Rosario', 'Prada Vel·squez', 'rosarioprada@outlook.com', '971144782', '05/11/1990')
+	('CNE', '442233698', 'Rosario', 'Prada Vel√°squez', 'rosarioprada@outlook.com', '971144782', '05/11/1990')
 GO
 
 /* Insertar 3 registros */
@@ -406,7 +406,7 @@ VALUES
 	('Camisa sport', 'Adams', '60', 'Large', '60.80'),
 	('Camisa sport', 'Adams', '70', 'Medium', '58.75'),
 	('buzo de verano', 'Reebok', '45', 'Small', '62.90'),
-	('PantalÛn Jean', 'Lewis', '35', 'Large', '73.60')
+	('Pantal√≥n Jean', 'Lewis', '35', 'Large', '73.60')
 GO
 
 /* Listar tipo de documento DNI de client */
@@ -415,7 +415,7 @@ FROM client
 WHERE type_document LIKE 'DNI'
 GO
 
-/* Listar cuyo servidor de correo electrÛnico sea outlook.com de client */
+/* Listar cuyo servidor de correo electr√≥nico sea outlook.com de client */
 SELECT *
 FROM client
 WHERE email LIKE '%@outlook.com'
@@ -439,19 +439,19 @@ FROM clothes
 WHERE brand LIKE 'Adams'
 GO
 
-/* Eliminar lÛgicamente los datos de un cliente (client) de acuerdo a un determinado id */
+/* Eliminar l√≥gicamente los datos de un cliente (client) de acuerdo a un determinado id */
 UPDATE client
 SET active = '0' 
 WHERE id = '1'
 GO
 
-/* Eliminar lÛgicamente los datos de un cliente (seller) de acuerdo a un determinado id */
+/* Eliminar l√≥gicamente los datos de un cliente (seller) de acuerdo a un determinado id */
 UPDATE seller
 SET active = '0' 
 WHERE id = '2'
 GO
 
-/* Eliminar lÛgicamente los datos de un cliente (clothes) de acuerdo a un determinado id */
+/* Eliminar l√≥gicamente los datos de un cliente (clothes) de acuerdo a un determinado id */
 UPDATE clothes
 SET active = '0' 
 WHERE id = '3'
